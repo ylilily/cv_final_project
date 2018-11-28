@@ -130,7 +130,7 @@ if __name__ == '__main__':
             combined = F.upsample(combined, scale_factor=2, mode='nearest')
             combined = self.color3(combined)
 
-            return combined
+            return combined, global_img
 
     net = Net()
 
