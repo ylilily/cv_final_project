@@ -123,7 +123,7 @@ class Net(nn.Module):
         self.color3 = nn.Sequential(*color_layers3)
         
     def forward(self, img):
-        img = img.permute((0,3,1,2))
+        img = img.permute(0, 3, 1, 2)
         img = self.low_features(img)
         global_img = self.global_conv_features(img)
         global_img = global_img.view(global_img.size(0), -1)
